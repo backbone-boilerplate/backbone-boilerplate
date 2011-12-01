@@ -1,0 +1,20 @@
+{
+  "author": "Tim Branyen <tim@tabdeveloper.com> (http://tbranyen.com)",
+  "name": "backbone-boilerplate",
+  "description": "backbone/node.js pushState enabled server",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tbranyen/backbone-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tbranyen/backbone-boilerplate.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "~0.6.3"
+  },
+  "dependencies": {
+    "backbone": "0.5.3",
+    "express": "2.5.1"
+  },
+  "devDependencies": {}
+}
