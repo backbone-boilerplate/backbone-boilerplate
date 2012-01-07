@@ -1,0 +1,18 @@
+{
+  "author": "tbranyen",
+  "name": "backbone-boilerplate",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tbranyen/backbone-boilerplate.git"
+  },
+  "engines": {
+    "node": "~0.6.6"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "git://github.com/cowboy/grunt.git",
+    "clean-css": "~0.3.1",
+    "express": "~2.5.4"
+  }
+}
