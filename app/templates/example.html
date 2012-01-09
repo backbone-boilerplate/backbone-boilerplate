@@ -41,6 +41,13 @@
         <li><a data-bypass href="#server">Using the development server</a>
         <li><a data-bypass href="#adding-tasks">Adding new tasks</a>
       </ul>
+    <li><a data-bypass href="#http-server">HTTP Server Setup/Configuration</a>
+      <ul class="nested">
+        <li><a data-bypass href="#html5-pushstate">HTML5 pushState URL support</a>
+        <ul class="nested">
+          <li><a data-bypass href="#apache-htaccess">Apache / .htaccess</a>
+        </ul>
+      </ul>
     <li><a data-bypass href="#useful-resources">Useful Resources</a>
   </ul>
 </section>
@@ -229,6 +236,29 @@
 
   <h3 id="adding-tasks">Adding new tasks</h3>
   <p>Placeholder</p>
+</section>
+
+<section>
+  <h2 id="http-server">HTTP Server Setup/Configuration</h2>
+  
+  <h3 id="html5-pushstate">HTML5 pushState URL support</h3>
+  <p>When <code>pushState</code> is enabled and active in your application, new routes will be navigated without #hash fragments by updating the document location (URL). In many cases - when your app is being served through a web server, such as Apache - when somebody attempts to visit one of these URLs, they will hit a 404 error (since the server doesn't know about <code>pushState</code>, and can't find the requested file.)</p>
+   <p>You can set up your web server to support <code>pushState</code>-generated locations by catching all requests (e.g. <code>.com/some/module/</code>) and silently rewriting them to <code>.com/index.html</code> (if the requested URL isn't a static resource), where the Backbone app will handle the routing.</p>
+
+  <ul>
+    <li><h4 id="apache-htaccess">Apache / .htaccess</h4>
+      <p>You can set up Apache web server to route <code>pushState</code> URLs to <code>index.html</code> by adding the following rules to a <code>.htaccess</code> file and dropping it in the root of your project:</p>
+      <pre><code>
+# html5 pushstate (history) support:
+&lt;ifModule mod_rewrite.c&gt;
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !\.(js|css|gif|jpg|jpeg|png|ico|swf|pdf|html|php|json)$
+    RewriteCond %{REQUEST_URI} !^index
+    RewriteRule (.*) index.html [L]
+&lt;/ifModule&gt;
+      </code></pre>
+      <p><small>More info: <a data-bypass href="http://www.josscrowcroft.com/2012/code/htaccess-for-html5-history-pushstate-url-routing/" title="HTML5 History / pushState URLs, .htaccess and You" target="_blank">HTML5 History / pushState URLs, .htaccess and You</a>.</small></p>
+  </ul>
 </section>
 
 <section id="useful-resources">
