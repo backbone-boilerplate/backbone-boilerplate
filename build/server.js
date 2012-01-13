@@ -18,6 +18,18 @@ site.use("/dist", express.static("./dist"));
 // Serve favicon.ico
 site.use(express.favicon("./favicon.ico"));
 
+if (process.argv[2] == '--reload' ||  process.argv.length > 3 && process.argv[3] == '--reload') {
+
+	site.use(express.bodyParser());
+
+	require('./tasks/reload/socket/serverStub.js').enableSocket(site);
+
+} else {
+	site.get("/reload.js", function(req, res) {
+	  res.send("// to enable, pass '--reload' to server command");
+	});
+}
+
 // Ensure all routes go home, client side app..
 site.get("*", function(req, res) {
   fs.createReadStream("./index.html").pipe(res);
