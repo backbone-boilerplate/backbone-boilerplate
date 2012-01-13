@@ -95,10 +95,9 @@ jQuery(function($) {
   $(document).on("click", "a:not([data-bypass])", function(evt) {
     // Get the anchor href and protcol
     var href = $(this).attr("href");
-    var protocol = this.protocol + "//";
 
     // Ensure the protocol is not part of URL, meaning its relative.
-    if (href.slice(protocol.length) !== protocol) {
+    if (url.match("^(ftp|http|https):+.") == null) {
       // Stop the default event to ensure the link will not cause a page
       // refresh.
       evt.preventDefault();
