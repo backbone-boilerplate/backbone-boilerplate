@@ -1,0 +1,9 @@
+{
+    "name": "websocket-whiteboard"
+  , "description": "example whiteboard application with websockets"
+  , "version": "0.0.1"
+  , "dependencies": {
+        "express": "2.3.11",
+        "ejs": "0.4.3"
+    }
+}

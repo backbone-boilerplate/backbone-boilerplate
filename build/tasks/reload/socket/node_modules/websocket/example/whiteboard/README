@@ -1,0 +1,10 @@
+To run the whiteboard example, make sure to run..
+
+npm install
+
+..from within the 'whiteboard' folder, then fire up the example server with..
+
+node ./whiteboard.js
+
+..and navigate to http://localhost:8080 from a browser supporting draft-09
+of the WebSockets specification.
