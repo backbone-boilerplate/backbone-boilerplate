@@ -102,6 +102,9 @@ jQuery(function($) {
     var href = $(this).attr("href");
     var protocol = this.protocol + "//";
 
+    // Do not route to relative URLs that are javascript snippets.
+    if ( href.match(/^javascript:/) ) return;
+
     // Ensure the protocol is not part of URL, meaning its relative.
     if (href.slice(0, protocol.length) !== protocol) {
       // Stop the default event to ensure the link will not cause a page
