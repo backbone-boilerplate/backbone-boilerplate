@@ -111,6 +111,11 @@ jQuery(function($) {
       // refresh.
       evt.preventDefault();
 
+      // Make sure that we navigate to a URL that does not include a
+      // leading front slash because that's not what the router expects
+      // but that's what we want to do in our HTML.
+      href = href.replace(/^\//, "");
+
       // This uses the default router defined above, and not any routers
       // that may be placed in modules.  To have this work globally (at the
       // cost of losing all route events) you can change the following line
