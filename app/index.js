@@ -14,7 +14,12 @@ jQuery(function($) {
       "": "index",
       ":hash": "index"
     },
-
+    initialize: function(){
+      // If you have sub routers defined in additional modules, you can do attach them here. 
+      // This enables navigation such as 'app.routers.OtherRouter.navigate'
+      //
+      // this.OtherRouter = new Other.Router();
+    },
     index: function(hash) {
       var route = this;
       var tutorial = new Example.Views.Tutorial();
