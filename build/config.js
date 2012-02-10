@@ -50,7 +50,9 @@ config.init({
 
   clean: {
     folder: "dist/"
-  }
+  },
+
+  test: [ "test" ]
 
 });
 
