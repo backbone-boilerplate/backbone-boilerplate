@@ -55,11 +55,19 @@ jQuery(function($) {
     var href = $(this).attr("href");
     var protocol = this.protocol + "//";
 
+    // Do not route to relative URLs that are javascript snippets.
+    if ( href.match(/^javascript:/) ) return;
+
     // Ensure the protocol is not part of URL, meaning its relative.
     if (href && href.slice(0, protocol.length) !== protocol) {
       // Stop the default event to ensure the link will not cause a page
       // refresh.
       evt.preventDefault();
+
+      // Make sure that we navigate to a URL that does not include a
+      // leading front slash because that's not what the router expects
+      // but that's what we want to do in our HTML.
+      href = href.replace(/^\//, "");
 
       // This uses the default router defined above, and not any routers
       // that may be placed in modules.  To have this work globally (at the
