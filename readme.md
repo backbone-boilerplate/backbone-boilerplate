@@ -64,5 +64,5 @@ Once you have the boilerplate downloaded and extracted, run the following:
 node build/server
 ```
 
-Then point your browser at `http://localhost:8000/`, and
+Then point your browser at `http://localhost:8000/` and
 enjoy the fine tutorial.
