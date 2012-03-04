@@ -21,7 +21,7 @@ Special Thanks to: [cowboy](http://github.com/cowboy),
 * **[Download ZIP](https://github.com/tbranyen/backbone-boilerplate/zipball/master)**
 * **[Download TAR](https://github.com/tbranyen/backbone-boilerplate/tarball/master)**
 
-If you would rather use git, you can simply:
+If you would rather not use git, you can simply:
 
 ``` bash
 cd myproject
