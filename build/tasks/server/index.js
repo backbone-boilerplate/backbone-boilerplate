@@ -15,7 +15,7 @@ task.registerTask("server", "Run development server.", function(prop) {
     index: "./index.html",
 
     port: 8000,
-    host: "127.0.0.1"
+    host: "0.0.0.0"
   });
 
   options.folders = options.folders || {};
