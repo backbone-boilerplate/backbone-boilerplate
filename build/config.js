@@ -54,13 +54,25 @@ config.init({
     ]
   },
 
+  less: {
+    compile: {
+      options: {
+        paths: ['assets/css'],
+        compress: false
+      },
+      files: {
+        'dist/debug/index.css': 'assets/css/index.css'
+      }
+    }
+  },
+
   // This task uses the MinCSS Node.js project to take all your CSS files in
   // order and concatenate them into a single CSS file named index.css.  It
   // also minifies all the CSS as well.  This is named index.css, because we
   // only want to load one stylesheet in index.html.
   mincss: {
     "dist/release/index.css": [
-      "assets/css/style.css"
+      "dist/debug/index.css"
     ]
   },
 
@@ -89,7 +101,8 @@ config.init({
       folders: {
         "app": "dist/debug",
         "app/templates": "app/templates",
-        "assets/js/libs": "dist/debug"
+        "assets/js/libs": "dist/debug",
+        "assets/css": "dist/debug"
       }
     },
 
@@ -126,7 +139,7 @@ config.init({
 // dist/debug/templates.js, compile all the application code into
 // dist/debug/require.js, and then concatenate the require/define shim
 // almond.js and dist/debug/templates.js into the require.js file.
-task.registerTask("default", "clean lint jst requirejs concat");
+task.registerTask("default", "clean lint jst less requirejs concat");
 
 // The debug task is simply an alias to default to remain consistent with
 // debug/release.
