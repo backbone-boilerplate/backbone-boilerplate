@@ -7,6 +7,7 @@ require.config({
     // JavaScript folders
     libs: "../assets/js/libs",
     plugins: "../assets/js/plugins",
+    less: "../assets/js/lessinit",
 
     // Libraries
     jquery: "../assets/js/libs/jquery",
@@ -26,5 +27,13 @@ require.config({
     underscore: {
       attach: "_"
     }
+  },
+
+  // remove less from optimized file
+  onBuildWrite: function (id, path, contents) {
+    if(id === 'less') {
+      contents = "";
+    }
+    return contents;
   }
 });
