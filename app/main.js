@@ -9,7 +9,7 @@ require([
   "modules/example"
 ],
 
-function(namespace, jQuery, Backbone, Example) {
+function(namespace, $, Backbone, Example) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
@@ -47,7 +47,7 @@ function(namespace, jQuery, Backbone, Example) {
   // Treat the jQuery ready function as the entry point to the application.
   // Inside this function, kick-off all initialization, everything up to this
   // point should be definitions.
-  jQuery(function($) {
+  $(function() {
     // Define your master router on the application namespace and trigger all
     // navigation from this instance.
     app.router = new Router();
@@ -71,11 +71,10 @@ function(namespace, jQuery, Backbone, Example) {
       // refresh.
       evt.preventDefault();
 
-      // This uses the default router defined above, and not any routers
-      // that may be placed in modules.  To have this work globally (at the
-      // cost of losing all route events) you can change the following line
-      // to: Backbone.history.navigate(href, true);
-      app.router.navigate(href, true);
+      // `Backbone.history.navigate` is sufficient for all Routers and will
+      // trigger the correct events.  The Router's internal `navigate` method
+      // calls this anyways.
+      Backbone.history.navigate(href, true);
     }
   });
 
