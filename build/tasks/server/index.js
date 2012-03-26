@@ -14,9 +14,13 @@ task.registerTask("server", "Run development server.", function(prop) {
     favicon: "./favicon.ico",
     index: "./index.html",
 
-    port: 8000,
-    host: "127.0.0.1"
+    port: process.env.PORT || 8000,
+    host: process.env.PORT ? "0.0.0.0" : "127.0.0.1"
   });
+
+  console.log('Process.env');
+  console.log(process.env);
+  console.dir(process.env);
 
   options.folders = options.folders || {};
 
