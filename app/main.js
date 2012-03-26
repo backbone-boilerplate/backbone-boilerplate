@@ -6,7 +6,10 @@ require([
   "use!backbone",
 
   // Modules
-  "modules/example"
+  "modules/example",
+
+  // less compilation
+  "less"
 ],
 
 function(namespace, $, Backbone, Example) {

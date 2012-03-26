@@ -1,0 +1,31 @@
+
+// For now, variables can't be declared inside @media blocks.
+
+@var: 42;
+
+@media print {
+    .class {
+        color: blue;    
+        .sub {
+            width: @var;
+        }
+    }
+    .top, header > h1 {
+        color: #222 * 2;
+    }
+}
+
+@media screen {
+    @base: 8;
+    body { max-width: @base * 60; }
+}
+
+@media all and (orientation:portrait) {
+    aside { float: none; }
+}
+
+@media handheld and (min-width: @var), screen and (min-width: 20em) {
+    body {
+        max-width: 480px;
+    }
+}
