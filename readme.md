@@ -18,14 +18,14 @@ Special Thanks to: [cowboy](http://github.com/cowboy),
 
 ## Installation ##
 
-* **[Download ZIP](https://github.com/tbranyen/backbone-boilerplate/zipball/master)**
-* **[Download TAR](https://github.com/tbranyen/backbone-boilerplate/tarball/master)**
+* **[Download ZIP](https://github.com/backbone-boilerplate/backbone-boilerplate/zipball/master)**
+* **[Download TAR](https://github.com/backbone-boilerplate/backbone-boilerplate/tarball/master)**
 
 If you would rather use git, you can simply:
 
 ``` bash
 cd myproject
-git clone https://github.com/tbranyen/backbone-boilerplate.git .
+git clone https://github.com/backbone-boilerplate/backbone-boilerplate.git .
 rm -rf .git
 ```
 
