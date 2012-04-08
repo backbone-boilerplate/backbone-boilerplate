@@ -76,13 +76,14 @@
   <h2 id="getting-help">Getting help</h2>
 
   <p>If you're encountering issues, need assistance, or have a question that hasn't been answered in this
-  tutorial or <a target="blank" href="https://github.com/tbranyen/backbone-boilerplate">the GitHub project page</a>
+  tutorial or <a data-bypass target="_blank" href="https://github.com/backbone-boilerplate/backbone-boilerplate">the GitHub project page</a>
   you may find help in one of these places:</p>
 
   <ul>
     <li>IRC - #documentcloud on irc.freenode.net
-    <li><a target="blank" href="http://github.com/tbranyen/backbone-boilerplate/issues">GitHub Issues</a> - Please report if you've found an issue,
+    <li><a data-bypass target="_blank" href="http://github.com/backbone-boilerplate/backbone-boilerplate/issues">GitHub Issues</a> - Please report if you've found an issue,
     bug, or controversial request.
+    <li><a data-bypass target="_blank" href="http://github.com/backbone-boilerplate/backbone-boilerplate/wiki">GitHub Wiki</a> - The main resource for Backbone Boilerplate learning.
   </ul>
 
   <p>I want this project to be the best it possibly can and represent the interests of the community, <b>please</b>
@@ -96,7 +97,7 @@
   will need to clean out all the existing defaults that are in the boilerplate are necessary to display this tutorial.
   </p>
 
-  <p class="clues"><b>Strongly recommend you read through this tutorial before cleaning out any files that may hold clues on how to use the Boilerplate.</b></p>
+  <p class="clues"><b>Strongly recommend you read through this tutorial and <a target="blank" href="http://github.com/backbone-boilerplate/backbone-boilerplate/wiki">the wiki</a> before cleaning out any files that may hold clues on how to use the Boilerplate.</b></p>
 
   <h3 id="cleaning">Cleaning out default files and code</h3>
   <p>There are several places where customization may be required.</p>
@@ -115,23 +116,7 @@
       <p>If you are not planning on testing your application with QUnit you should delete this directory.</p>
 
     <li><h4 id="build-process">Removing the build process</h4>
-      <p>If you are not planning on using the provided build tool, delete the <code>build</code> folder.  It contains a lot of unnecessary code and
-      Node.js modules that you will not need.  You should also clear out the commented out script tags inside of <code>index.html</code>:
-      
-      <pre><code>
-    &lt;!--
-         If using the build tool you can uncomment the following lines and use
-         these instead.  They will toggle based on if you are using debug or
-         release.
-    --&gt;
-
-    &lt;!--
-    &lt;script src=&quot;/assets/js/libs.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;/assets/js/templates.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;/assets/js/app.js&quot;&gt;&lt;/script&gt;
-    --&gt;
-      </code></pre>
-      </p>
+      <p>If you are not planning on using the provided build tool, delete the <code>grunt.js</code>.
 
     <li><h4 id="favicon">Changing the Favicon</h4>
       <p>At the root level of the project simply change the <code>favicon.ico</code> file to point to your own branded icon.</p>
@@ -172,7 +157,7 @@
 
       <pre><code>
     /* ==|== primary styles =====================================================
-       Author: Backbone Boilerplate <Change to your Name>
+       Author: Backbone Boilerplate &lt;Change to your Name&gt;
        ========================================================================== */
      </code></pre>
      </p>
@@ -267,7 +252,7 @@
   </p>
 
   <h3 id="events">Working with Application Wide Events</h3>
-  <p>Application wide events provide a convenient way for modules to communicate with each other. <code>namespace.app</code> references a copy of the Backbone.Events object. <a href="http://documentcloud.github.com/backbone/#Events">More information on Backbone Events</a></p>
+  <p>Application wide events provide a convenient way for modules to communicate with each other. <code>namespace.app</code> references a copy of the Backbone.Events object. <a data-bypass target="_blank" href="http://documentcloud.github.com/backbone/#Events">More information on Backbone Events</a></p>
 
   <p>
   To bind a callback function to an event:
@@ -380,7 +365,7 @@ the settings.</p>
   <h2>Useful resources</h2>
 
   <ul>
-    <li><a href="http://backbonejs.org/">Backbone documentation</a> - Framework on which Backbone Boilerplate is built.
-    <li><a href="http://documentcloud.github.com/underscore/docs/underscore.html">Underscore documentation</a> - Required dependency for Backbone.
+    <li><a data-bypass target="_blank" href="http://backbonejs.org/">Backbone documentation</a> - Framework on which Backbone Boilerplate is built.
+    <li><a data-bypass target="_blank" href="http://documentcloud.github.com/underscore/docs/underscore.html">Underscore documentation</a> - Required dependency for Backbone.
   </ul>
 </section>
