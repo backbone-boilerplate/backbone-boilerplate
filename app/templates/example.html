@@ -162,8 +162,8 @@
       this is safe to delete as well.
 
       <pre><code>
-    // Include the example module
-    var Example = namespace.module("example");
+        // Modules
+        "modules/example"
       </code></pre>
       </p>
   
@@ -187,12 +187,32 @@
   it something identifiable to new developers.  To set your own namespace, simply open the <code>app/namespace.js</code> file and
   make the following modifications:
 
-    First change the name of the namespace, this is defined on <code>Line 4</code>
+    First set up the namespace, by replacing the code on <code>Line 11</code>
+    
+    Instead of returning the object, add it to your new namespace by changing the return at line 11
     <pre><code>
-  this.myapp = {
-    // Assist with code organization, by breaking up logical components of code
-    // into modules.
-    module: function() {
+      function($, _, Backbone) {
+        // Put application wide code here
+      
+        // replace return with your namespace
+        return {
+          // This is useful when developing if you don't want to use a
+          // build process every time you change a template.
+          //
+          // Delete if you are using a different template loading method.
+          fetchTemplate: function(path, done) {
+    </code></pre>
+    to this
+    <pre><code>
+      function($, _, Backbone) {
+        // Put application wide code here
+      
+        this.mynewnamespace = {
+          // This is useful when developing if you don't want to use a
+          // build process every time you change a template.
+          //
+          // Delete if you are using a different template loading method.
+          fetchTemplate: function(path, done) {
     </code></pre>
     </p>
 
