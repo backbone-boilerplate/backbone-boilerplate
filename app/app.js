@@ -8,8 +8,9 @@ define([
 function($, _, Backbone) {
 
   // Localize or create a new JavaScript Template object.
-  var JST = window.JST = window.JST || {};
-
+  var JST = window.JST = window.JST || {},
+	  JSTqueue = {};
+  
   // Keep active application instances namespaced under an app object.
   return _.extend({
 
@@ -17,30 +18,35 @@ function($, _, Backbone) {
     // build process every time you change a template.
     //
     // Delete if you are using a different template loading method.
-    fetchTemplate: function(path) {
+    fetchTemplate: function(path, done) {
       // Append the file extension.
       path += ".html";
-
-      // Should be an instant synchronous way of getting the template, if it
-      // exists in the JST object.
-      if (!JST[path]) {
-        // Fetch it asynchronously if not available from JST, ensure that
-        // template requests are never cached and prevent global ajax event
-        // handlers from firing.
-        $.ajax({
-          url: "/" + path,
+      
+      // Check if template is already loaded, if so call callback and return
+      if ( JST[path] ) {
+        if ( _.isFunction(done) ) {
+            done( JST[path] );
+            return;
+        }
+      }
+      
+      // If template is not loading, add it to the queue
+      if ( !JSTqueue[path] ) {
+        JSTqueue[path] = $.ajax({
+          url: path,
           dataType: "text",
-          cache: false,
-          async: false,
-
-          success: function(contents) {
-            JST[path] = _.template(contents);
+          success: function( contents ) {
+            JST[path] = _.template( contents );
           }
         });
       }
-
-      // Ensure a normalized return value.
-      return JST[path];
+      
+      // When template is done loading, call callback
+      JSTqueue[path].done(function() {
+        if ( _.isFunction(done) ) {
+          done( JST[path] );
+        }
+      });
     },
 
     // Create a custom object with a nested Views object.
