@@ -22,6 +22,26 @@ Special Thanks to: [cowboy](http://github.com/cowboy),
 Extra Special Thanks to: [Paul Guinan](http://bigredhair.com/work/paul.html)
 for giving me usage rights to his fantastic Boilerplate character.
 
+## Bower ##
+
+**This version supports Bower instead of JamJS**
+
+Do:
+
+    npm install
+
+to get bower and then:
+
+    bower install
+
+to resolve BBB's packages dependencies.
+
+Update at any time with:
+
+    bower update
+
+Add new dependencies to component.json.
+
 ## Documentation ##
 
 View the Backbone Boilerplate documentation here:

@@ -65,8 +65,10 @@ module.exports = function(grunt) {
       // Include the main configuration file.
       mainConfigFile: "app/config.js",
 
-      // Also include the JamJS configuration file.
-      jamConfig: "/vendor/jam/require.config.js",
+      // Also include Bower's configuration file.
+      // FIXME move jamConfig to bowerConfig or something more generic
+      // like packagesConfig
+      jamConfig: "require.config.js",
 
       // Output file.
       out: "dist/debug/require.js",
@@ -85,7 +87,7 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          "vendor/js/libs/almond.js",
+          "components/almond/almond.js",
           "dist/debug/templates.js",
           "dist/debug/require.js"
         ],
@@ -129,8 +131,17 @@ module.exports = function(grunt) {
     //  To learn more about using the server task, please refer to the code
     //  until documentation has been written.
     server: {
-      // Ensure the favicon is mapped correctly.
-      files: { "favicon.ico": "favicon.ico" },
+      files: {
+        // Ensure the favicon is mapped correctly.
+        "favicon.ico": "favicon.ico",
+        // And Bower's RequireJS config.
+        "require.config.js": "require.config.js"
+      },
+
+      // FIXME Don't know why we need this here, vendor just works!
+      folders: {
+        "components": "components"
+      },
 
       // For styles.
       prefix: "app/styles/",
@@ -142,7 +153,7 @@ module.exports = function(grunt) {
         // Map `server:debug` to `debug` folders.
         folders: {
           "app": "dist/debug",
-          "vendor/js/libs": "dist/debug",
+          "components": "dist/debug",
           "app/styles": "dist/debug"
         }
       },
@@ -157,7 +168,7 @@ module.exports = function(grunt) {
         // Map `server:release` to `release` folders.
         folders: {
           "app": "dist/release",
-          "vendor/js/libs": "dist/release",
+          "components": "dist/release",
           "app/styles": "dist/release"
         }
       }
@@ -180,7 +191,7 @@ module.exports = function(grunt) {
     // available to compile CSS if you are unable to use the runtime compiler
     // (use if you have a custom server, PhoneGap, Adobe Air, etc.)
     watch: {
-      files: ["grunt.js", "vendor/**/*", "app/**/*"],
+      files: ["grunt.js", "components/**/*", "app/**/*"],
       tasks: "styles"
     },
 

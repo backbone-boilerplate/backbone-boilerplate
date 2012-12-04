@@ -1,0 +1,9 @@
+{
+  "name": "yourApplication",
+  "version": "1.0.0",
+  "dependencies": {
+    "layoutmanager": "~0.7.2",
+    "requirejs": "~2.1.2",
+    "almond": "~0.2.1"
+  }
+}
