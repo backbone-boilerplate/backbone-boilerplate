@@ -1,23 +1,23 @@
-var jam = {
+var packageManager = {
     "packages": [
         {
             "name": "backbone",
-            "location": "../vendor/jam/backbone",
+            "location": "../components/backbone",
             "main": "backbone.js"
         },
         {
             "name": "backbone.layoutmanager",
-            "location": "../vendor/jam/backbone.layoutmanager",
+            "location": "../components/layoutmanager",
             "main": "backbone.layoutmanager.js"
         },
         {
             "name": "jquery",
-            "location": "../vendor/jam/jquery",
+            "location": "../components/jquery",
             "main": "jquery.js"
         },
         {
             "name": "lodash",
-            "location": "../vendor/jam/lodash",
+            "location": "../components/lodash",
             "main": "./lodash.js"
         }
     ],
@@ -42,12 +42,12 @@ var jam = {
 };
 
 if (typeof require !== "undefined" && require.config) {
-    require.config({packages: jam.packages, shim: jam.shim});
+    require.config({packages: packageManager.packages, shim: packageManager.shim});
 }
 else {
-    var require = {packages: jam.packages, shim: jam.shim};
+    var require = {packages: packageManager.packages, shim: packageManager.shim};
 }
 
 if (typeof exports !== "undefined" && typeof module !== "undefined") {
-    module.exports = jam;
+    module.exports = packageManager;
 }

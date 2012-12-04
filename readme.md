@@ -11,6 +11,9 @@ Organize your application in a logical filesystem, develop your
 Models/Collections/Views/Routers inside modules, and build knowing you have
 efficient code that will not bottleneck your users.
 
+
+**This version supports Bower instead of JamJS**
+
 Thanks to our
 [Contributors](https://github.com/tbranyen/backbone-boilerplate/contributors)!
 
