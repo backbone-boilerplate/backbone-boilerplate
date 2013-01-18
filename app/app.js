@@ -39,7 +39,7 @@ function() {
       // Seek out the template asynchronously.
       $.get(app.root + path, function(contents) {
         done(JST[path] = _.template(contents));
-      });
+      }, 'html');
     }
   });
 
