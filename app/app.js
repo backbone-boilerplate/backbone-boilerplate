@@ -5,7 +5,7 @@ define([
   // `vendor/js` directory, here.
 ],
 
-function(LayoutManager) {
+function() {
 
   // Provide a global location to place configuration settings and module
   // creation.
@@ -17,9 +17,9 @@ function(LayoutManager) {
   // Localize or create a new JavaScript Template object.
   var JST = window.JST = window.JST || {};
 
-  // Configure LayoutManager with Backbone Boilerplate defaults.
-  LayoutManager.configure({
-    // Allow LayoutManager to augment Backbone.View.prototype.
+  // Configure Backbone.Layout with Backbone Boilerplate defaults.
+  Backbone.Layout.configure({
+    // Allow Backbone.Layout to augment Backbone.View.prototype.
     manage: true,
 
     prefix: "app/templates/",
