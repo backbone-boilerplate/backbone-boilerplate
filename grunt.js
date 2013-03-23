@@ -78,14 +78,15 @@ module.exports = function(grunt) {
       wrap: false
     },
 
-    // The concatenate task is used here to merge the almond require/define
+    // The concatenate task is used here to merge the require.js require/define
     // shim and the templates into the application code.  It's named
     // dist/debug/require.js, because we want to only load one script file in
     // index.html.
     concat: {
       dist: {
         src: [
-          "vendor/js/libs/almond.js",
+          // Uncomment to enable Almond (https://github.com/jrburke/almond)
+          //"vendor/js/libs/almond.js",
           "dist/debug/templates.js",
           "dist/debug/require.js"
         ],
@@ -228,7 +229,7 @@ module.exports = function(grunt) {
   // all your code, precompile all the underscore templates into
   // dist/debug/templates.js, compile all the application code into
   // dist/debug/require.js, and then concatenate the require/define shim
-  // almond.js and dist/debug/templates.js into the require.js file.
+  // and dist/debug/templates.js into the require.js file.
   grunt.registerTask("debug", "clean lint jst requirejs concat styles");
 
   // The release task will run the debug tasks and then minify the
