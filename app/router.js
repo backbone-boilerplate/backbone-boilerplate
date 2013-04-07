@@ -12,7 +12,7 @@ function(app) {
     },
 
     index: function() {
-
+      console.log('Routed to index');
     }
   });
 

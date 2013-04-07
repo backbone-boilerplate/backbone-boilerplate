@@ -72,7 +72,8 @@ module.exports = function(grunt) {
       out: "dist/debug/require.js",
 
       // Root application module.
-      name: "config",
+      name: "main",
+      deps: ["config"],
 
       // Do not wrap everything in an IIFE.
       wrap: false
@@ -131,7 +132,7 @@ module.exports = function(grunt) {
     server: {
       // Ensure the favicon is mapped correctly.
       files: { "favicon.ico": "favicon.ico" },
-
+      folders: { "vendor": "vendor"},
       // For styles.
       prefix: "app/styles/",
 
