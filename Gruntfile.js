@@ -52,16 +52,17 @@ module.exports = function(grunt) {
           out: "<%= dist.debug %>source.js",
 
           // Root application module.
-          name: "config",
+          name: "main",
 
-          // Include the main application.
-          insertRequire: ["main"],
+          // Include nested `require` by default. Use `exclude` if you're loading
+          // some dynamic/runtime files.
+          findNestedDependencies: true,
 
-          // This will ensure the application runs after being built.
-          include: ["app", "main", "router"],
-
-          // Wrap everything in an IIFE.
-          wrap: true
+          wrap: {
+            // set baseUrl config if concat is used
+            start: "require.config({ baseUrl: 'app/', waitSeconds: 30 });",
+            end: " "
+          }
         }
       }
     },
