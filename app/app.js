@@ -66,9 +66,12 @@ function(LayoutManager) {
         options.template = name;
       }
 
-      // Check if a layout already exists, if so, update the template.
-      if (this.layout) {
+      // Check if a layout already exists and it wasn't change.
+      // If so, update the template.
+      if (this.layout && options.template == this.layout.template) {
         this.layout.template = options.template;
+        // Also update the serialize options
+        this.layout.serialize = options.serialize;
       } else {
         // Create a new Layout with options.
         this.layout = new Backbone.Layout(_.extend({
