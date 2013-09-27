@@ -1,32 +1,31 @@
 {
   "name": "backbone-boilerplate",
   "version": "1.0.0",
-
   "devDependencies": {
     "grunt": "~0.4.1",
-    "bbb": "~0.2.0",
-    "bower": "~1.2.6",
-    "grunt-cli": "~0.1.9",
     "coveralls": "~2.3.0",
+    "grunt-bbb-requirejs": "~0.1.0",
+    "grunt-bbb-styles": "~0.1.0",
+    "grunt-bbb-server": "~0.1.0",
+    "grunt-contrib-compress": "~0.5.2",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-cssmin": "~0.6.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-compress": "~0.5.2",
     "grunt-processhtml": "~0.2.0",
     "grunt-karma": "~0.6.2",
-    "load-grunt-tasks": "~0.1.0",
     "karma-jasmine": "~0.1.0",
     "karma-mocha": "~0.1.0",
     "karma-qunit": "~0.1.0",
     "karma-phantomjs-launcher": "~0.1.0",
-    "karma-coverage": "~0.1.0"
+    "karma-coverage": "~0.1.0",
+    "load-grunt-tasks": "~0.1.0"
   },
-
   "peerDependencies": {
-    "generator-bbb": "*"
+    "bower": "*",
+    "generator-bbb": "*",
+    "grunt-cli": "*"
   },
-
   "scripts": {
     "test": "bower install -s && grunt karma:run && cat test/coverage/PhantomJS\\ 1.9.2\\ \\(Linux\\)/lcov.info | coveralls",
     "postinstall": "bower install -s"
