@@ -38,7 +38,7 @@ The easiest way to get started is to install Git and clone the repository:
 ``` bash
 # Using Git, fetch only the latest commits.  You won't need the full history
 # for your project.
-git clone --depth 1 git@github.com:backbone-boilerplate/backbone-boilerplate.git
+git clone --depth 1 https://github.com/backbone-boilerplate/backbone-boilerplate
 
 # Move the repository to your own project name.
 mv backbone-boilerplate my-project
@@ -55,13 +55,16 @@ good idea to update after fetching.
 ``` bash
 # Install global dependencies.  Depending on your user account you may need to
 # gain elevated privileges using something like `sudo`.
-npm i -gq grunt-cli bower
+npm install -g grunt-cli bower
 
 # Optionally install coveralls (integration is baked in with Travis CI).
-npm i -gq coveralls
+npm install -g coveralls
 
-# Install NPM and Bower dependencies (Bower is hooked up in package.json).
-npm i -q
+# Install NPM dependencies.
+npm install
+
+# Install Bower dependencies.
+bower install
 ```
 
 ## Build process ##
@@ -103,5 +106,5 @@ By default, the test runner is Mocha and Chai.  You can easily change this by
 editting the commented regions of the karma configuration in `Gruntfile.js`.
 
 ## License ##
-Copyright © 2013 Tim Branyen (@tbranyen)  
+Copyright © 2014 Tim Branyen (@tbranyen)  
 Licensed under the MIT license.

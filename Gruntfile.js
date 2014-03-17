@@ -16,7 +16,6 @@ module.exports = function(grunt) {
           mainConfigFile: "app/config.js",
           generateSourceMaps: true,
           include: ["main"],
-          insertRequire: ["main"],
           out: "dist/source.min.js",
           optimize: "uglify2",
 
@@ -62,7 +61,7 @@ module.exports = function(grunt) {
       }
     },
 
-    // Minfiy the distribution CSS.
+    // Minify the distribution CSS.
     cssmin: {
       release: {
         files: {
@@ -129,8 +128,9 @@ module.exports = function(grunt) {
         singleRun: true,
         captureTimeout: 7000,
         autoWatch: true,
+        logLevel: "ERROR",
 
-        reporters: ["progress", "coverage"],
+        reporters: ["dots", "coverage"],
         browsers: ["PhantomJS"],
 
         // Change this to the framework you want to use.
@@ -187,7 +187,7 @@ module.exports = function(grunt) {
 
     coveralls: {
       options: {
-        coverage_dir: "test/coverage/PhantomJS 1.9.2 (Linux)/"
+        coverage_dir: "test/coverage/"
       }
     }
   });
@@ -208,9 +208,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-bbb-server");
   grunt.loadNpmTasks("grunt-bbb-requirejs");
   grunt.loadNpmTasks("grunt-bbb-styles");
-
-  // Create an aliased test task.
-  grunt.registerTask("test", ["karma:run"]);
 
   // When running the default Grunt command, just lint the code.
   grunt.registerTask("default", [
