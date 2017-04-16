@@ -7,6 +7,8 @@
 Backbone Boilerplate
 ====================
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/backbone-boilerplate/backbone-boilerplate?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This boilerplate is the product of much research and frustration.  Existing
 boilerplates freely modify Backbone core, lack a build process, and are very
 prescriptive; Backbone Boilerplate changes that.
